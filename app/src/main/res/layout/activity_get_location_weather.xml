@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".location_weather.GetLocationWeatherActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_search"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#1E010C15"
+        app:cardPreventCornerOverlap="false"
+        app:cardMaxElevation="0dp"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="45dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="20dp"
+                android:id="@+id/img_btn_back"
+                android:background="@drawable/icon_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp" />
+            <EditText
+                android:id="@+id/edt_location"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/img_btn_back"
+                app:layout_constraintRight_toLeftOf="@id/img_btn_find"
+                android:layout_width="0dp"
+                android:hint="Enter location..."
+                android:paddingStart="10dp"
+                android:background="@null"
+                android:textSize="18sp"
+                android:layout_height="0dp"
+                android:paddingLeft="20dp" />
+            <ImageButton
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/img_btn_find"
+                android:background="@drawable/icon_search"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_layout"
+        app:layout_constraintTop_toBottomOf="@+id/cv_search"
+        android:layout_width="match_parent"
+        app:cardElevation="20dp"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="300dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_city"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                android:text="City"
+                android:textColor="@color/text_black"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_get_location"
+                app:layout_constraintTop_toBottomOf="@id/tv_city"
+                app:layout_constraintLeft_toLeftOf="@id/tv_city"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:text="Current position"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/text_white"
+                android:background="@drawable/custom_button_demo_one"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container1"
+                app:layout_constraintTop_toBottomOf="@id/btn_get_location"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_ha_noi"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Ha Noi"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:layout_height="30dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_ho_chi_minh"
+                    app:layout_constraintLeft_toRightOf="@id/btn_location_ha_noi"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Ho Chi Minh"
+                    android:layout_marginLeft="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_Da_Nang"
+                    app:layout_constraintLeft_toRightOf="@id/btn_location_ho_chi_minh"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginLeft="5dp"
+
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Da Nang"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container2"
+                app:layout_constraintTop_toBottomOf="@id/container1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_hue"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Hue"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:layout_height="30dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_nha_trang"
+                    app:layout_constraintLeft_toRightOf="@id/btn_location_hue"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Nha Trang"
+                    android:layout_marginLeft="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_vung_tau"
+                    app:layout_constraintLeft_toRightOf="@id/btn_location_nha_trang"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Vung Tau"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container3"
+                app:layout_constraintTop_toBottomOf="@id/container2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_london"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="London"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:layout_height="30dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_japan_tokyo"
+                    app:layout_constraintLeft_toRightOf="@id/btn_location_london"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Tokyo"
+                    android:layout_marginLeft="5dp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_location_france_paris"
+                    app:layout_constraintLeft_toRightOf="@id/btn_location_japan_tokyo"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginLeft="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Paris"
+                    android:background="@drawable/custom_button_demo_one_v1"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

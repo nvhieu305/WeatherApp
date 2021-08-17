@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_drawer_layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ctn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/img_btn_click_nav_drawer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_width="25dp"
+            android:background="@drawable/icon_chose"
+            android:backgroundTint="@color/text_home_weather_one_v1"
+            android:elevation="5dp"
+            android:scaleType="centerCrop"
+            android:layout_height="25dp"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view_layout"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/id_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_title"
+                android:text="@string/app_name"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <ImageButton
+                android:id="@+id/img_btn_setting"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:src="@drawable/icon_setting"
+                android:background="@android:color/transparent"
+                android:layout_marginRight="10dp"/>
+            <View
+                android:id="@+id/v_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                android:layout_marginTop="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/blue"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/img_btn_add_location"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:paddingLeft="25dp"
+                android:text="+     Add location"
+                android:textSize="17sp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/blue"
+                android:textAllCaps="false"
+                android:layout_margin="5dp"
+                app:layout_constraintTop_toBottomOf="@id/v_line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                app:layout_constraintTop_toBottomOf="@id/img_btn_add_location"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
